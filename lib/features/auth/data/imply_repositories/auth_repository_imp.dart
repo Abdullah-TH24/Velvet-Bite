@@ -21,7 +21,7 @@ class AuthRepositoryImpl implements AuthContractRepository {
   }
 
   @override
-  Future<AuthEntity> signUp({
+  Future<bool> signUp({
     required String email,
     required String fullName,
     required String password,

@@ -19,6 +19,7 @@ import 'package:velvet_bite/features/auth/presentation/components/sign_in_form.d
 import 'package:velvet_bite/features/auth/presentation/components/social_method.dart';
 import 'package:velvet_bite/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:velvet_bite/features/auth/presentation/cubit/auth_state.dart';
+import 'package:velvet_bite/main.dart';
 
 class SignIn extends StatelessWidget {
   final SignInUseCase signInUseCase;
@@ -91,7 +92,9 @@ class SignIn extends StatelessWidget {
                         );
                       }
                       if (state is AuthSuccess) {
-                        log('Welcome ${state.user.fullName}');
+                        log('Welcome ${state.user!.fullName}');
+                        prefs.setBool('is_logged_in', true);
+                        Get.offAllNamed(ScreensRoutesNames.home);
                       }
                       if (state is AuthError) {
                         Get.snackbar(
@@ -99,7 +102,7 @@ class SignIn extends StatelessWidget {
                           state.message.substring(11).toString(),
                           duration: const Duration(seconds: 3),
                           snackPosition: SnackPosition.BOTTOM,
-                          backgroundColor: AppColors.background.withAlpha(123),
+                          backgroundColor: AppColors.primaryText.withAlpha(100),
                           dismissDirection: DismissDirection.horizontal,
                           colorText: AppColors.primaryText,
                         );
@@ -124,7 +127,7 @@ class SignIn extends StatelessWidget {
                 leftText: 'Create a new account >',
                 rightText: 'Sign Up',
                 onPressed: () {
-                  Get.toNamed(ScreensRoutesNames.signUp);
+                  Get.offNamed(ScreensRoutesNames.signUp);
                 },
               ),
             ],

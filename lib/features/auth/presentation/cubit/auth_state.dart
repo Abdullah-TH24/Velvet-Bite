@@ -19,7 +19,7 @@ class AuthLoading extends AuthState {
 }
 
 class AuthSuccess extends AuthState {
-  final AuthEntity user;
+  final AuthEntity? user;
   const AuthSuccess(this.user, {super.isPasswordVisible = false});
 
   @override

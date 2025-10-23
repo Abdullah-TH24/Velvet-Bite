@@ -8,7 +8,7 @@ abstract class AuthContractRepository {
     required UserType type,
     required String password,
   });
-  Future<AuthEntity> signUp({
+  Future<bool> signUp({
     required String email,
     required String fullName,
     required String password,

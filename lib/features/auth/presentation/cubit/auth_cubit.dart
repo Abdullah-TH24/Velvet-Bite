@@ -41,12 +41,12 @@ class AuthCubit extends Cubit<AuthState> {
   }) async {
     emit(AuthLoading(isPasswordVisible: isPasswordVisible));
     try {
-      final user = await signUpUseCase.call(
+      await signUpUseCase.call(
         email: email,
         fullName: fullName,
         password: password,
       );
-      emit(AuthSuccess(user, isPasswordVisible: isPasswordVisible));
+      emit(AuthSuccess(null, isPasswordVisible: isPasswordVisible));
     } catch (e) {
       emit(AuthError(e.toString(), isPasswordVisible: isPasswordVisible));
     }

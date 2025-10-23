@@ -33,12 +33,14 @@ class SignUpForm extends StatelessWidget {
             controller: _username,
             icon: Icons.person_outline,
             text: 'Username',
+            keyboardType: TextInputType.name,
           ),
           const Gap(21),
           CustomField(
             controller: _email,
             icon: Icons.email_outlined,
             text: 'E-mail',
+            keyboardType: TextInputType.emailAddress,
           ),
           const Gap(21),
           BlocBuilder<AuthCubit, AuthState>(
@@ -49,6 +51,7 @@ class SignUpForm extends StatelessWidget {
                 icon: Icons.lock_open_rounded,
                 obscureText: !state.isPasswordVisible,
                 suffixIcon: PasswordIcon(state: state),
+                keyboardType: TextInputType.visiblePassword,
               );
             },
           ),

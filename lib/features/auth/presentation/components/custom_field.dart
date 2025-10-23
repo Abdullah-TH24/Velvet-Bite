@@ -7,6 +7,7 @@ class CustomField extends StatelessWidget {
   final String text;
   final Widget? suffixIcon;
   final bool obscureText;
+  final TextInputType? keyboardType;
   const CustomField({
     super.key,
     required this.controller,
@@ -14,6 +15,7 @@ class CustomField extends StatelessWidget {
     required this.text,
     this.suffixIcon,
     this.obscureText = false,
+    required this.keyboardType,
   });
 
   @override
@@ -29,7 +31,7 @@ class CustomField extends StatelessWidget {
         suffixIcon: suffixIcon,
       ),
       cursorColor: AppColors.primaryText.withAlpha(123),
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: keyboardType,
       style: Theme.of(context).textTheme.bodySmall,
       obscureText: obscureText,
     );

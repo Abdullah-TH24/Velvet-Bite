@@ -30,6 +30,7 @@ class SignInForm extends StatelessWidget {
             controller: _email,
             icon: Icons.email_outlined,
             text: 'E-mail Or Username',
+            keyboardType: TextInputType.emailAddress,
           ),
           const Gap(21),
           BlocBuilder<AuthCubit, AuthState>(
@@ -40,6 +41,7 @@ class SignInForm extends StatelessWidget {
                 icon: Icons.lock_open_rounded,
                 obscureText: !state.isPasswordVisible,
                 suffixIcon: PasswordIcon(state: state),
+                keyboardType: TextInputType.visiblePassword,
               );
             },
           ),

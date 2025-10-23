@@ -1,5 +1,7 @@
 // ignore_for_file: must_be_immutable
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -74,6 +76,26 @@ class SignUp extends StatelessWidget {
                   return ElevatedButton(
                     onPressed: () async {
                       FocusScope.of(context).unfocus();
+                      await context.read<AuthCubit>().signUp(
+                        isPasswordVisible: state.isPasswordVisible,
+                        email: _email.text.trim(),
+                        fullName: _username.text.trim(),
+                        password: _password.text.trim(),
+                      );
+                      if (state is AuthSuccess) {
+                        log('Welcome');
+                        Get.offNamed(ScreensRoutesNames.signIn);
+                      } else if (state is AuthError) {
+                        Get.snackbar(
+                          'Error',
+                          state.message.substring(11).toString(),
+                          duration: const Duration(seconds: 3),
+                          snackPosition: SnackPosition.BOTTOM,
+                          backgroundColor: AppColors.primaryText.withAlpha(100),
+                          dismissDirection: DismissDirection.horizontal,
+                          colorText: AppColors.background,
+                        );
+                      }
                     },
                     child: (state is AuthLoading)
                         ? const Padding(
