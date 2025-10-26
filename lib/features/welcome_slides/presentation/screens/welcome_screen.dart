@@ -18,49 +18,51 @@ class WelcomeScreen extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: ListView(
+        child: Column(
           children: [
-            Container(height: Get.height / 2),
-            Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color.fromARGB(0, 30, 30, 30),
-                    Color.fromARGB(132, 30, 30, 30),
-                    Color.fromARGB(192, 25, 26, 31),
-                  ],
-                  begin: AlignmentGeometry.topCenter,
-                  end: AlignmentGeometry.bottomCenter,
+            Expanded(child: Container()),
+            Expanded(
+              child: Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color.fromARGB(0, 30, 30, 30),
+                      Color.fromARGB(132, 30, 30, 30),
+                      Color.fromARGB(192, 25, 26, 31),
+                    ],
+                    begin: AlignmentGeometry.topCenter,
+                    end: AlignmentGeometry.bottomCenter,
+                  ),
                 ),
-              ),
-              height: Get.height / 2,
-              width: Get.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Container(
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Text(
-                      'Welcome to\nVelvet Bite!',
-                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: const Color.fromARGB(255, 15, 199, 15),
+                height: Get.height / 2,
+                width: Get.width,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Text(
+                        'Welcome to\nVelvet Bite!',
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                          color: const Color.fromARGB(255, 15, 199, 15),
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
-                  ),
-                  const Gap(15),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-                      style: Theme.of(context).textTheme.bodySmall,
+                    const Gap(15),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
                     ),
-                  ),
-                  const Gap(75),
-                  const WelcomeButton(),
-                ],
+                    const Gap(75),
+                    const WelcomeButton(),
+                  ],
+                ),
               ),
             ),
           ],

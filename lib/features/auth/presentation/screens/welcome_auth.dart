@@ -66,7 +66,7 @@ class WelcomeAuth extends StatelessWidget {
                 Get.toNamed(ScreensRoutesNames.signIn);
               },
               child: Text(
-                'Sign in with E-mail Account',
+                'Sign In with E-mail Account',
                 style: Theme.of(context).textTheme.bodySmall,
               ),
             ),

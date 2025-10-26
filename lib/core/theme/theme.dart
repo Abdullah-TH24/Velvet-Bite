@@ -19,7 +19,7 @@ final ThemeData appTheme = ThemeData(
   ),
   textTheme: const TextTheme(
     bodyLarge: TextStyle(color: AppColors.primaryText, fontSize: 16),
-    bodyMedium: TextStyle(color: AppColors.primaryText, fontSize: 14),
+    bodyMedium: TextStyle(color: AppColors.primaryText, fontSize: 18),
     bodySmall: TextStyle(color: AppColors.primaryText, fontSize: 15),
     titleLarge: TextStyle(
       color: AppColors.secondaryText,

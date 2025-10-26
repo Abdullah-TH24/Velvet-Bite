@@ -38,7 +38,7 @@ class SplashScreen extends StatelessWidget {
             body: ListView(
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                Gap(Get.height / 5),
+                const Gap(160),
                 Center(child: SvgPicture.asset('images/Logo.svg')),
                 const Gap(200),
                 const SpinKitFadingCircle(

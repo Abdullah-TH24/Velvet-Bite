@@ -71,7 +71,25 @@ class SignIn extends StatelessWidget {
                 password: _password,
               ),
               const Gap(35),
-              BlocBuilder<AuthCubit, AuthState>(
+              BlocConsumer<AuthCubit, AuthState>(
+                listener: (context, state) {
+                  if (state is AuthSuccess) {
+                    log('Welcome ${state.user!.fullName}');
+                    prefs.setBool('is_logged_in', true);
+                    Get.offAllNamed(ScreensRoutesNames.home);
+                  }
+                  if (state is AuthError) {
+                    Get.snackbar(
+                      'Error',
+                      state.message.substring(11).toString(),
+                      duration: const Duration(seconds: 3),
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: AppColors.primaryText.withAlpha(100),
+                      dismissDirection: DismissDirection.horizontal,
+                      colorText: AppColors.primaryText,
+                    );
+                  }
+                },
                 builder: (context, state) {
                   return ElevatedButton(
                     onPressed: () async {
@@ -89,22 +107,6 @@ class SignIn extends StatelessWidget {
                           emailOrFullName: _emailOrFullName.text.trim(),
                           type: UserType.fullName,
                           password: _password.text.trim(),
-                        );
-                      }
-                      if (state is AuthSuccess) {
-                        log('Welcome ${state.user!.fullName}');
-                        prefs.setBool('is_logged_in', true);
-                        Get.offAllNamed(ScreensRoutesNames.home);
-                      }
-                      if (state is AuthError) {
-                        Get.snackbar(
-                          'Error',
-                          state.message.substring(11).toString(),
-                          duration: const Duration(seconds: 3),
-                          snackPosition: SnackPosition.BOTTOM,
-                          backgroundColor: AppColors.primaryText.withAlpha(100),
-                          dismissDirection: DismissDirection.horizontal,
-                          colorText: AppColors.primaryText,
                         );
                       }
                     },

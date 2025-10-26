@@ -4,7 +4,7 @@ import 'package:velvet_bite/core/routes/screens_routes_names.dart';
 import 'package:velvet_bite/features/auth/presentation/screens/sign_in.dart';
 import 'package:velvet_bite/features/auth/presentation/screens/sign_up.dart';
 import 'package:velvet_bite/features/auth/presentation/screens/welcome_auth.dart';
-import 'package:velvet_bite/features/test%20copy/presentation/screens/home.dart';
+import 'package:velvet_bite/features/home/presentation/screens/home.dart';
 import 'package:velvet_bite/features/welcome_slides/presentation/screens/slides_screen.dart';
 import 'package:velvet_bite/features/welcome_slides/presentation/screens/welcome_screen.dart';
 

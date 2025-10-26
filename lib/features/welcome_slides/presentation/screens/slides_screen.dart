@@ -66,6 +66,7 @@ class _SlidesScreenState extends State<SlidesScreen> {
         ],
       ),
       body: ListView(
+        physics: const NeverScrollableScrollPhysics(),
         children: [
           SlidesWidget(controller: _controller),
           const Gap(10),

@@ -29,7 +29,12 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthSuccess(user, isPasswordVisible: isPasswordVisible));
     } catch (e) {
       log(e.toString());
-      emit(AuthError(e.toString(), isPasswordVisible: isPasswordVisible));
+      emit(
+        AuthError(
+          'Please check your internet connection and try again later',
+          isPasswordVisible: isPasswordVisible,
+        ),
+      );
     }
   }
 
@@ -48,7 +53,12 @@ class AuthCubit extends Cubit<AuthState> {
       );
       emit(AuthSuccess(null, isPasswordVisible: isPasswordVisible));
     } catch (e) {
-      emit(AuthError(e.toString(), isPasswordVisible: isPasswordVisible));
+      emit(
+        AuthError(
+          'Please check your internet connection and try again later',
+          isPasswordVisible: isPasswordVisible,
+        ),
+      );
     }
   }
 
