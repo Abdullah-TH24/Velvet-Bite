@@ -9,5 +9,7 @@ class ScreensRoutesNames {
 
   static final String signUp = '/sign_up';
 
+  static final String mainHome = '/main_home';
+
   static final String home = '/home';
 }

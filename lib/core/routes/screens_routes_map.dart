@@ -5,6 +5,7 @@ import 'package:velvet_bite/features/auth/presentation/screens/sign_in.dart';
 import 'package:velvet_bite/features/auth/presentation/screens/sign_up.dart';
 import 'package:velvet_bite/features/auth/presentation/screens/welcome_auth.dart';
 import 'package:velvet_bite/features/home/presentation/screens/home.dart';
+import 'package:velvet_bite/features/home/presentation/screens/main_home.dart';
 import 'package:velvet_bite/features/welcome_slides/presentation/screens/slides_screen.dart';
 import 'package:velvet_bite/features/welcome_slides/presentation/screens/welcome_screen.dart';
 
@@ -35,5 +36,6 @@ List<GetPage<dynamic>> pageRoutesMap = [
       signUpUseCase: AppDependencies.signUpUseCase,
     ),
   ),
+  GetPage(name: ScreensRoutesNames.mainHome, page: () => MainHome()),
   GetPage(name: ScreensRoutesNames.home, page: () => const Home()),
 ];
