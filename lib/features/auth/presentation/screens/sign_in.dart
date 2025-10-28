@@ -10,7 +10,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:velvet_bite/core/routes/screens_routes_names.dart';
 import 'package:velvet_bite/core/theme/theme.dart';
-import 'package:velvet_bite/features/auth/domain/contract_repositories/auth_contract_repository.dart';
+import 'package:velvet_bite/features/auth/domain/contract_repositories/auth_repository.dart';
 import 'package:velvet_bite/features/auth/domain/use_cases/sign_in_use_case.dart';
 import 'package:velvet_bite/features/auth/domain/use_cases/sign_up_use_case.dart';
 import 'package:velvet_bite/features/auth/presentation/components/custom_divider.dart';

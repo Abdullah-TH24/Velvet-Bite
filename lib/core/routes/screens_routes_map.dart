@@ -36,6 +36,6 @@ List<GetPage<dynamic>> pageRoutesMap = [
       signUpUseCase: AppDependencies.signUpUseCase,
     ),
   ),
-  GetPage(name: ScreensRoutesNames.mainHome, page: () => MainHome()),
+  GetPage(name: ScreensRoutesNames.mainHome, page: () => const MainHome()),
   GetPage(name: ScreensRoutesNames.home, page: () => const Home()),
 ];

@@ -1,3 +1,3 @@
 class BaseIp {
-  static final String baseIp = '192.168.137.109';
+  static final String baseIp = '10.230.149.169';
 }

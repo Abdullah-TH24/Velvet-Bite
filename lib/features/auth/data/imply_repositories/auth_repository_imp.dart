@@ -1,4 +1,4 @@
-import 'package:velvet_bite/features/auth/domain/contract_repositories/auth_contract_repository.dart';
+import 'package:velvet_bite/features/auth/domain/contract_repositories/auth_repository.dart';
 import 'package:velvet_bite/features/auth/domain/entities/auth_entity.dart';
 import 'package:velvet_bite/features/auth/data/data_sources/auth_remote_data_source.dart';
 

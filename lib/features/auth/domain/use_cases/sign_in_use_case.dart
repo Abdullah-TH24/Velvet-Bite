@@ -1,4 +1,4 @@
-import 'package:velvet_bite/features/auth/domain/contract_repositories/auth_contract_repository.dart';
+import 'package:velvet_bite/features/auth/domain/contract_repositories/auth_repository.dart';
 
 class SignInUseCase {
   final AuthContractRepository repository;

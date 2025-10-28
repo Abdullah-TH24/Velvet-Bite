@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:velvet_bite/features/auth/domain/contract_repositories/auth_contract_repository.dart';
+import 'package:velvet_bite/features/auth/domain/contract_repositories/auth_repository.dart';
 import 'package:velvet_bite/features/auth/domain/use_cases/sign_in_use_case.dart';
 import 'package:velvet_bite/features/auth/domain/use_cases/sign_up_use_case.dart';
 import 'auth_state.dart';
@@ -29,12 +29,16 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthSuccess(user, isPasswordVisible: isPasswordVisible));
     } catch (e) {
       log(e.toString());
-      emit(
-        AuthError(
-          'Please check your internet connection and try again later',
-          isPasswordVisible: isPasswordVisible,
-        ),
-      );
+      if (e.toString().contains('connection time out')) {
+        emit(
+          AuthError(
+            'Please check your internet connection and try again later',
+            isPasswordVisible: isPasswordVisible,
+          ),
+        );
+      } else {
+        emit(AuthError(e.toString(), isPasswordVisible: isPasswordVisible));
+      }
     }
   }
 
