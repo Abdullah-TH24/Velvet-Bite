@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
         defaultTransition: Transition.cupertinoDialog,
         transitionDuration: const Duration(seconds: 1),
         getPages: [
-          GetPage(name: '/', page: () => SplashScreen()),
+          GetPage(name: '/', page: () => const SplashScreen()),
           ...pageRoutesMap,
         ],
         debugShowCheckedModeBanner: false,

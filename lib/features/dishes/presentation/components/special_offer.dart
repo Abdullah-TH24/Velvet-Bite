@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velvet_bite/core/api/base_ip.dart';
 import 'package:velvet_bite/core/theme/theme.dart';
-import 'package:velvet_bite/features/home/presentation/components/custom_shape.dart';
-import 'package:velvet_bite/features/home/presentation/cubit/home_cubit.dart';
+import 'package:velvet_bite/features/dishes/presentation/components/custom_shape.dart';
+import 'package:velvet_bite/features/dishes/presentation/cubit/dishes_cubit.dart';
 
 class SpecialOffer extends StatelessWidget {
-  final HomeLoaded state;
+  final DishesLoaded state;
   const SpecialOffer({super.key, required this.state});
 
   @override

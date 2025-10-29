@@ -76,7 +76,7 @@ class SignIn extends StatelessWidget {
                   if (state is AuthSuccess) {
                     log('Welcome ${state.user!.fullName}');
                     prefs.setBool('is_logged_in', true);
-                    Get.offAllNamed(ScreensRoutesNames.home);
+                    Get.offAllNamed(ScreensRoutesNames.dishes);
                   }
                   if (state is AuthError) {
                     Get.snackbar(

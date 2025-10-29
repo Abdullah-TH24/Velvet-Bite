@@ -1,22 +1,22 @@
-part of 'home_cubit.dart';
+part of 'dishes_cubit.dart';
 
-sealed class HomeState extends Equatable {
-  const HomeState();
+sealed class DishesState extends Equatable {
+  const DishesState();
 
   @override
   List<Object> get props => [];
 }
 
-final class HomeInitial extends HomeState {}
+final class DishesInitial extends DishesState {}
 
-final class HomeLoading extends HomeState {}
+final class DishesLoading extends DishesState {}
 
-class HomeLoaded extends HomeState {
+class DishesLoaded extends DishesState {
   final String fullName;
   final String email;
   final List<DishesEntity> specialOffer;
   final List<DishesEntity> popularFood;
-  const HomeLoaded(
+  const DishesLoaded(
     this.fullName,
     this.email,
     this.specialOffer,
@@ -27,9 +27,9 @@ class HomeLoaded extends HomeState {
   List<Object> get props => [fullName, email, specialOffer, popularFood];
 }
 
-class HomeError extends HomeState {
+class DishesError extends DishesState {
   final String message;
-  const HomeError(this.message);
+  const DishesError(this.message);
 
   @override
   List<Object> get props => [message];

@@ -1,3 +1,3 @@
-abstract class HomeRespository {
+abstract class DishesRespository {
   getUserInfoAndProducts({required String token});
 }

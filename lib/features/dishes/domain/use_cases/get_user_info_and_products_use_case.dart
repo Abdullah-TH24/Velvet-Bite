@@ -1,7 +1,7 @@
-import 'package:velvet_bite/features/home/domain/contract_repositories/home_respository.dart';
+import 'package:velvet_bite/features/dishes/domain/contract_repositories/dishes_respository.dart';
 
 class GetUserInfoAndProductsUseCase {
-  final HomeRespository respository;
+  final DishesRespository respository;
 
   GetUserInfoAndProductsUseCase(this.respository);
 

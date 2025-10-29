@@ -3,13 +3,13 @@ import 'dart:developer';
 
 import 'package:http/http.dart' as http;
 import 'package:velvet_bite/core/api/base_ip.dart';
-import 'package:velvet_bite/features/home/data/models/home_model.dart';
+import 'package:velvet_bite/features/dishes/data/models/parent_model.dart';
 
-abstract class HomeDataSource {
+abstract class DishesDataSource {
   getUserInfoAndProducts({required String token});
 }
 
-class HomeDataSourceImp implements HomeDataSource {
+class DishesDataSourceImp implements DishesDataSource {
   @override
   getUserInfoAndProducts({required String token}) async {
     try {
@@ -19,7 +19,7 @@ class HomeDataSourceImp implements HomeDataSource {
       );
       Map<String, dynamic> responseBody = json.decode(response.body);
       if (response.statusCode == 200) {
-        return HomeModel.fromJson(responseBody['data']);
+        return ParentModel.fromJson(responseBody['data']);
       } else {
         throw Exception(responseBody['message'] ?? 'Something went wrong');
       }

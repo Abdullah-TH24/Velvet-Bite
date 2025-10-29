@@ -4,8 +4,9 @@ import 'package:velvet_bite/core/routes/screens_routes_names.dart';
 import 'package:velvet_bite/features/auth/presentation/screens/sign_in.dart';
 import 'package:velvet_bite/features/auth/presentation/screens/sign_up.dart';
 import 'package:velvet_bite/features/auth/presentation/screens/welcome_auth.dart';
-import 'package:velvet_bite/features/home/presentation/screens/home.dart';
-import 'package:velvet_bite/features/home/presentation/screens/main_home.dart';
+import 'package:velvet_bite/features/dishes/presentation/screens/dish_details.dart';
+import 'package:velvet_bite/features/dishes/presentation/screens/dishes.dart';
+import 'package:velvet_bite/features/dishes/presentation/screens/main_screen.dart';
 import 'package:velvet_bite/features/welcome_slides/presentation/screens/slides_screen.dart';
 import 'package:velvet_bite/features/welcome_slides/presentation/screens/welcome_screen.dart';
 
@@ -36,6 +37,10 @@ List<GetPage<dynamic>> pageRoutesMap = [
       signUpUseCase: AppDependencies.signUpUseCase,
     ),
   ),
-  GetPage(name: ScreensRoutesNames.mainHome, page: () => const MainHome()),
-  GetPage(name: ScreensRoutesNames.home, page: () => const Home()),
+  GetPage(name: ScreensRoutesNames.mainScreen, page: () => const MainScreen()),
+  GetPage(name: ScreensRoutesNames.dishes, page: () => const Dishes()),
+  GetPage(
+    name: ScreensRoutesNames.dishDetails,
+    page: () => const DishDetails(),
+  ),
 ];

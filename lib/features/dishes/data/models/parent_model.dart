@@ -1,15 +1,15 @@
-import 'package:velvet_bite/features/home/domain/entities/home_entity.dart';
-import 'package:velvet_bite/features/home/data/models/dishes_model.dart';
+import 'package:velvet_bite/features/dishes/domain/entities/parent_entity.dart';
+import 'package:velvet_bite/features/dishes/data/models/dishes_model.dart';
 
-class HomeModel extends HomeEntity {
-  const HomeModel(super.fullName, super.email, super.dishes);
+class ParentModel extends ParentEntity {
+  const ParentModel(super.fullName, super.email, super.dishes);
 
-  factory HomeModel.fromJson(Map<String, dynamic> json) {
+  factory ParentModel.fromJson(Map<String, dynamic> json) {
     final List<DishesModel> dishesList = (json['dishes'] as List)
         .map((dish) => DishesModel.fromJson(dish))
         .toList();
 
-    return HomeModel(
+    return ParentModel(
       json['userInfo']['fullName'],
       json['userInfo']['email'],
       dishesList,

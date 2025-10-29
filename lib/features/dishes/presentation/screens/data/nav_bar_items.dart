@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:velvet_bite/features/home/data/models/nav_bar_model.dart';
+import 'package:velvet_bite/features/dishes/data/models/nav_bar_model.dart';
 
 List<NavBarModel> navBarItems = [
   NavBarModel(icon: const Icon(Icons.home_outlined), tooltip: 'Home'),

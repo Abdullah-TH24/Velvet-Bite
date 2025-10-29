@@ -4,32 +4,34 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:gap/gap.dart';
 import 'package:velvet_bite/core/di/injection_container.dart';
 import 'package:velvet_bite/core/theme/theme.dart';
-import 'package:velvet_bite/features/home/presentation/components/custom_widget_title.dart';
-import 'package:velvet_bite/features/home/presentation/components/popular_food.dart';
-import 'package:velvet_bite/features/home/presentation/components/search_field.dart';
-import 'package:velvet_bite/features/home/presentation/components/special_offer.dart';
-import 'package:velvet_bite/features/home/presentation/cubit/home_cubit.dart';
+import 'package:velvet_bite/features/dishes/presentation/components/custom_widget_title.dart';
+import 'package:velvet_bite/features/dishes/presentation/components/popular_food.dart';
+import 'package:velvet_bite/features/dishes/presentation/components/search_field.dart';
+import 'package:velvet_bite/features/dishes/presentation/components/special_offer.dart';
+import 'package:velvet_bite/features/dishes/presentation/cubit/dishes_cubit.dart';
 import 'package:velvet_bite/main.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Dishes extends StatefulWidget {
+  const Dishes({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Dishes> createState() => _DishesState();
 }
 
-class _HomeState extends State<Home> {
+class _DishesState extends State<Dishes> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) {
-        final cubit = HomeCubit(AppDependencies.getUserInfoAndProductsUseCase);
+        final cubit = DishesCubit(
+          AppDependencies.getUserInfoAndProductsUseCase,
+        );
         cubit.getUserInfoAndProductsUseCase(token: prefs.getString('token')!);
         return cubit;
       },
-      child: BlocBuilder<HomeCubit, HomeState>(
+      child: BlocBuilder<DishesCubit, DishesState>(
         builder: (context, state) {
-          if (state is HomeLoading) {
+          if (state is DishesLoading) {
             return const Scaffold(
               extendBody: true,
               body: Center(
@@ -39,7 +41,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
             );
-          } else if (state is HomeLoaded) {
+          } else if (state is DishesLoaded) {
             return Scaffold(
               extendBody: true,
               appBar: AppBar(
@@ -135,7 +137,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
             );
-          } else if (state is HomeError) {
+          } else if (state is DishesError) {
             return Scaffold(
               extendBody: true,
               body: Padding(

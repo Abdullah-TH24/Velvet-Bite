@@ -2,25 +2,25 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:velvet_bite/core/theme/theme.dart';
-import 'package:velvet_bite/features/home/presentation/screens/data/nav_bar_items.dart';
-import 'package:velvet_bite/features/home/presentation/screens/home.dart';
+import 'package:velvet_bite/features/dishes/presentation/screens/data/nav_bar_items.dart';
+import 'package:velvet_bite/features/dishes/presentation/screens/dishes.dart';
 
 // ignore: must_be_immutable
-class MainHome extends StatefulWidget {
-  const MainHome({super.key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
   @override
-  State<MainHome> createState() => _MainHomeState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainHomeState extends State<MainHome> {
+class _MainScreenState extends State<MainScreen> {
   int currentIndex = 0;
   final List pages = [
-    const Home(),
-    const Home(),
-    const Home(),
-    const Home(),
-    const Home(),
+    const Dishes(),
+    const Dishes(),
+    const Dishes(),
+    const Dishes(),
+    const Dishes(),
   ];
 
   @override

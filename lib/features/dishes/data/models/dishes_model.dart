@@ -1,4 +1,4 @@
-import 'package:velvet_bite/features/home/domain/entities/dishes_entity.dart';
+import 'package:velvet_bite/features/dishes/domain/entities/dishes_entity.dart';
 
 class DishesModel extends DishesEntity {
   const DishesModel(

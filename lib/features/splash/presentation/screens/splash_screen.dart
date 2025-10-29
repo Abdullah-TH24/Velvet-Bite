@@ -23,7 +23,7 @@ class SplashScreen extends StatelessWidget {
           } else if (state is NavigateToWelcomeAuth) {
             Get.offNamed(ScreensRoutesNames.welcomeAuthScreen);
           } else if (state is NavigateToHome) {
-            Get.offNamed(ScreensRoutesNames.mainHome);
+            Get.offNamed(ScreensRoutesNames.mainScreen);
           }
         });
       },
