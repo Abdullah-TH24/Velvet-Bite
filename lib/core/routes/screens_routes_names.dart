@@ -14,4 +14,6 @@ class ScreensRoutesNames {
   static final String dishes = '/dishes';
 
   static final String dishDetails = '/dish_details';
+
+  static final String cart = '/cart';
 }

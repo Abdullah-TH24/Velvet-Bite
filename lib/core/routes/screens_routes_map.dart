@@ -4,6 +4,7 @@ import 'package:velvet_bite/core/routes/screens_routes_names.dart';
 import 'package:velvet_bite/features/auth/presentation/screens/sign_in.dart';
 import 'package:velvet_bite/features/auth/presentation/screens/sign_up.dart';
 import 'package:velvet_bite/features/auth/presentation/screens/welcome_auth.dart';
+import 'package:velvet_bite/features/cart/presentation/screens/cart.dart';
 import 'package:velvet_bite/features/dishes/presentation/screens/dish_details.dart';
 import 'package:velvet_bite/features/dishes/presentation/screens/dishes.dart';
 import 'package:velvet_bite/features/dishes/presentation/screens/main_screen.dart';
@@ -43,4 +44,5 @@ List<GetPage<dynamic>> pageRoutesMap = [
     name: ScreensRoutesNames.dishDetails,
     page: () => const DishDetails(),
   ),
+  GetPage(name: ScreensRoutesNames.cart, page: () => const Cart()),
 ];

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:velvet_bite/core/di/injection_container.dart';
+import 'package:velvet_bite/core/routes/screens_routes_names.dart';
 import 'package:velvet_bite/core/theme/theme.dart';
 import 'package:velvet_bite/features/dishes/presentation/components/custom_widget_title.dart';
 import 'package:velvet_bite/features/dishes/presentation/components/popular_food.dart';
@@ -79,7 +81,9 @@ class _DishesState extends State<Dishes> {
                     icon: const Icon(Icons.notifications_outlined),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(ScreensRoutesNames.cart);
+                    },
                     icon: const Icon(Icons.shopping_cart_outlined),
                   ),
                 ],

@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:velvet_bite/core/theme/theme.dart';
+import 'package:velvet_bite/features/dishes/presentation/components/buy_buttons.dart';
+import 'package:velvet_bite/features/dishes/presentation/components/choose_size_dish.dart';
+import 'package:velvet_bite/features/dishes/presentation/components/custom_icon.dart';
+import 'package:velvet_bite/features/dishes/presentation/components/similar_dishes.dart';
+import 'package:velvet_bite/features/dishes/presentation/components/title_with_desc.dart';
 
 class DishDetails extends StatelessWidget {
   const DishDetails({super.key});
@@ -26,121 +31,97 @@ class DishDetails extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
+      body: SizedBox(
         width: Get.width,
         child: ListView(
+          physics: const NeverScrollableScrollPhysics(),
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Stack(
               children: [
-                Expanded(
-                  flex: 3,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Hyderabadi Biryani',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Hyderabadi Biryani',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.star,
+                            color: Color(0xffFEC62E),
+                            size: 15,
                           ),
-                        ),
-                        Row(
-                          children: [
-                            const Icon(
-                              Icons.star,
-                              color: Color(0xffFEC62E),
-                              size: 15,
-                            ),
-                            const Gap(5),
-                            Text(
-                              '4.9',
-                              style: Theme.of(context).textTheme.bodySmall!
-                                  .copyWith(color: Colors.grey),
-                            ),
-                          ],
-                        ),
-                        const Gap(30),
-                        Text(
-                          'Restaurant',
-                          style: Theme.of(
-                            context,
-                          ).textTheme.bodySmall!.copyWith(color: Colors.grey),
-                        ),
-                        Text(
-                          'Nair Nosh',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                        const Gap(30),
-                        Text(
-                          'Price',
-                          style: Theme.of(
-                            context,
-                          ).textTheme.bodySmall!.copyWith(color: Colors.grey),
-                        ),
-                        Text(
-                          '\$7.50',
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                        const Gap(30),
-                        Text(
-                          'Quantity',
-                          style: Theme.of(
-                            context,
-                          ).textTheme.bodySmall!.copyWith(color: Colors.grey),
-                        ),
-                        Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.remove,
-                                color: AppColors.secondaryText,
-                              ),
-                              style: IconButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadiusGeometry.circular(
-                                    8,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const Gap(5),
-                            const Text('02'),
-                            const Gap(5),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.add,
-                                color: AppColors.secondaryText,
-                              ),
-                              style: IconButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadiusGeometry.circular(
-                                    8,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                          const Gap(5),
+                          Text(
+                            '4.9',
+                            style: Theme.of(
+                              context,
+                            ).textTheme.bodySmall!.copyWith(color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                      const TitleWithDesc(
+                        title: 'Restaurant',
+                        description: 'Nair Nosh',
+                      ),
+                      const TitleWithDesc(
+                        title: 'Price',
+                        description: '\$7.50',
+                        thickDesc: false,
+                      ),
+                      const Gap(30),
+                      Text(
+                        'Quantity',
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodySmall!.copyWith(color: Colors.grey),
+                      ),
+                      const Gap(10),
+                      Row(
+                        children: [
+                          CustomIcon(icon: Icons.remove, onTap: () {}),
+                          const Gap(10),
+                          const Text('02'),
+                          const Gap(10),
+                          CustomIcon(icon: Icons.add, onTap: () {}),
+                        ],
+                      ),
+                      const Gap(20),
+                      const ChooseSizeDish(),
+                      const Gap(20),
+                      Text(
+                        'Hyderabadi Biryani is a culinary masterpiece that tantalizes the senses with its aromatic spices, tender meat and fragrant basmati rice. Originating from the vibrant city of the Hyderabad in India, this iconic dish',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                      const Gap(20),
+                      Text(
+                        'Similar Dishes',
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodySmall!.copyWith(color: Colors.grey),
+                      ),
+                      const Gap(10),
+                      const SimilarDishes(),
+                      const Gap(15),
+                      const BuyButtons(),
+                    ],
                   ),
                 ),
-                Expanded(
-                  flex: 4,
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    child: Image.asset(
-                      'images/biryani.png',
-                      width: 320,
-                      height: 320,
-                      fit: BoxFit.cover,
-                    ),
+                PositionedDirectional(
+                  top: 0,
+                  end: 0,
+                  child: Image.asset(
+                    'images/biryani.png',
+                    width: 265,
+                    height: 265,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ],
