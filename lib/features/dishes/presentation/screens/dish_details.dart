@@ -22,7 +22,7 @@ class DishDetails extends StatelessWidget {
           },
           icon: const Icon(Icons.arrow_back_ios),
         ),
-        title: Text('Details', style: Theme.of(context).textTheme.bodySmall),
+        title: Text('Details', style: Theme.of(context).textTheme.bodyMedium),
         centerTitle: true,
         actions: [
           IconButton(

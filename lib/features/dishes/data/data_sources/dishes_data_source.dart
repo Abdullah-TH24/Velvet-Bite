@@ -14,7 +14,7 @@ class DishesDataSourceImp implements DishesDataSource {
   getUserInfoAndProducts({required String token}) async {
     try {
       http.Response response = await http.post(
-        Uri.parse('http://${BaseIp.baseIp}/velvet_bite/home/home.php'),
+        Uri.parse('http://${BaseIp.baseIp}/velvet_bite/dishes/dishes.php'),
         body: {'token': token},
       );
       Map<String, dynamic> responseBody = json.decode(response.body);
